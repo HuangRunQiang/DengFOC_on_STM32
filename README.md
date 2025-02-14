@@ -1,23 +1,20 @@
 # DengFOC_on_STM32
-My implementation of Field-Oriented Control(FOC) on STM32 following DengFOC's tutorial 
+我在 STM32 上实现的场向控制（FOC），遵循 DengFOC 的教程。
 
-DengFOC's tutorial: [DengFOC](http://dengfoc.com/#/)
+DengFOC 的教程：[DengFOC](http://dengfoc.com/#/)
 
+## 使用的硬件：
 
-## Hardware used: 
+### MCU 开发板：
 
-### MCU Development Board: 
+我最初使用的是来自 [电机控制套件](https://www.st.com/en/evaluation-tools/p-nucleo-ihm03.html) 的 STM32G4 Nucleo-64 板（用于开环速度控制案例）。在进行闭环位置控制时，我发现该板上的 SPI 通信无法正常工作。尽管花了很多时间在这上面，但我发现调试非常困难。
 
-I first used STM32G4 Nucleo-64 board from [motor control kit](https://www.st.com/en/evaluation-tools/p-nucleo-ihm03.html) (used on open loop speed control case). When working on closed loop position control, I found SPI communication is not working on that board. Although spent lots of time on it, I found it hard to debug. 
+因此，我从那时起切换到了 [bluepill (STM32F103C8T6)](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html)。如果有人能解决 SPI 通信问题，请通过电子邮件联系我或提交拉取请求。谢谢！
 
-Thus, I switched to [bluepill (STM32F103C8T6)](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html) from then. If anybody can figure out the SPI communication problem, please Email me or submit a pull request. Thank you!
+### 驱动板：
 
+[电机控制套件](https://www.st.com/en/evaluation-tools/p-nucleo-ihm03.html)
 
-### Driver Board: 
+### 带编码器的电机：
 
-[motor control kit](https://www.st.com/en/evaluation-tools/p-nucleo-ihm03.html)
-
-
-### Motor with encoder: 
-
-iPower Motor GM3506 Brushless Gimbal Motor w/ AS5048A Encoder [link](https://www.robotshop.com/products/ipower-motor-gm3506-brushless-gimbal-motor-w-as5048a-encoder)
+iPower Motor GM3506 无刷云台电机，配备 AS5048A 编码器 [链接](https://www.robotshop.com/products/ipower-motor-gm3506-brushless-gimbal-motor-w-as5048a-encoder)
